@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <title>For you</title>
+  </head>
+  <body>
+    <div class="image">
+      <image src="Catty.png" alt="2" width="200px" height="200px"/>
+    </div>
+
+    <h1>Do you love me?</h1>
+    <div class="buttons" id="buttons">
+      <button
+        class="button1"
+        id="button1"
+        onclick="window.location='thankyou.html'"
+      >
+        Yes
+      </button>
+      <button class="button2" id="button2" onclick="no()">No</button>
+    </div>
+    <script>
+      var myFontSize = 15;
+      var marginRight = 15;
+      var id = 0;
+      var arr = [
+        "Why??",
+        "Heyy!!",
+        "Babe please :((",
+        "Why you do this to me :(",
+        "Im gonna cry",
+        "Stop press No or i will be mad",
+        "Heyy I say STOPP!!","STOP!!","You dont love me anymore huh??!!","Keep pressing then",
+        "Okayy then","You Sure??","You dont love me :(","That's Cruel",
+        "You make me cry :((","Pookie Pleasee....","You know well how to make me cry","You can only press Yes","GO PRESS!!"
+      ];
+
+      function no() {
+        if (myFontSize >= 250 && marginRight <= 0) return;
+        var btn = document.getElementById("button1");
+        var nobutton = document.getElementById("button2");
+        nobutton.innerText = arr[id];
+        if (id < arr.length - 1) id += 1;
+        if (myFontSize < 250) myFontSize = myFontSize + 10;
+        if (marginRight >= 0) marginRight = marginRight - 5;
+        btn.style.fontSize = myFontSize + "pt";
+        btn.style.marginRight = marginRight + "px";
+      }
+    </script>
+  </body>
+</html>
